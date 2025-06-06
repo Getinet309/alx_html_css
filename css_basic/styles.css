@@ -1,1 +1,39 @@
+/* styles.css */
 
+/* Apply display: flex and flex-direction: column to the body */
+body {
+    display: flex;
+    flex-direction: column;
+    /* You might want to add min-height: 100vh; to body if you want the footer to always be at the bottom,
+       even with minimal content, but for this specific layout, it's not strictly required by the prompt. */
+}
+
+/* Apply display: flex and flex-direction: row to the main section */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* Ensure main takes available space */
+}
+
+/* Make article take 2/3 of the main content area */
+article {
+    flex: 2;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding: 20px; /* Add some padding for better readability */
+}
+
+/* Make aside take 1/3 of the main content area */
+aside {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding: 20px; /* Add some padding for better readability */
+    background-color: #e0e0e0; /* Optional: to visually distinguish aside */
+}
+
+/* Optional: Add some basic styling for header and footer if not already in base.css */
+header, footer {
+    width: 100%; /* Ensure header and footer span full width */
+    /* Add any other styling you deem fit for header/footer here, if not in base.css */
+}
+
+/* Add any additional styling for other elements as needed */
