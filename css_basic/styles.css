@@ -13,13 +13,26 @@ main {
     flex: auto;
 }
 
-article {
-    flex: 2;
-    overflow-y: auto;
-    padding: 20px;
-    background-color: #ffffff; /* White background for article */
-    border-right: 1px solid #ddd; /* Subtle border between article and aside */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
+/* styles.css additions for article content */
+
+article h3 {
+    color: #e74c3c; /* Red color for article subheadings */
+    font-size: 1.8em;
+}
+
+article h4 {
+    color: #3498db; /* Blue color for smaller headings */
+}
+
+article ul {
+    list-style-type: square; /* Square bullets for lists */
+    margin-left: 20px;
+}
+
+article img {
+    border-radius: 5px; /* Rounded corners for images in article */
+    max-width: 100%; /* Ensure images don't overflow */
+    height: auto; /* Maintain aspect ratio */
 }
 
 aside {
