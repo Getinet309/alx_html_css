@@ -94,7 +94,7 @@ header {
 
 .my_section1 span {
     display: inline-block;
-    background-color: transparent; /* Purple background for keywords */
+    /*background-color: transparent; /* Purple background for keywords */
     border-radius: 20px;
     padding: 5px 15px;
     margin: 5px; /* Adjusted margin for better spacing on all screens */
@@ -103,7 +103,7 @@ header {
 }
 
 .my_section1 button {
-    background-color: transparent; /* Button purple */
+   /* background-color: transparent; /* Button purple */
     color: white;
     border: none;
     border-radius: 25px;
