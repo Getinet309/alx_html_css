@@ -2,7 +2,20 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
+.my_section {
+  background-image: url('images/Object.png');
+    /* You might also want to add: */
+   /* background-size: cover;*/
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+   width: 200px;
+    min-height: 200px; /* Ensures a minimum height even if content is small */
+   /* max-width: 600px;  Limits maximum width */
+    background-color: lightcoral;
+    margin: 20px;
+    padding: 15px;
+}
 /* Base Body Styles */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif; /* A modern, clean font */
