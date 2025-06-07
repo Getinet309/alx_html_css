@@ -236,7 +236,7 @@ main section:nth-of-type(2) p {
 }
 
 .my_section2 > div {
-    display: grid;
+    display: inline-block;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     max-width: 1200px;
@@ -320,7 +320,7 @@ main section:nth-of-type(2) p {
 }
 
 .my_section3 > div {
-    display: grid;
+    display: inline-block;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     max-width: 1000px;
