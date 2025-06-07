@@ -12,3 +12,29 @@
     margin: 20px;
     padding: 15px;
 }
+.nav-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0;      /* Removes default padding */
+    margin: 0;       /* Removes default margin */
+    display: flex;   /* This is the key property */
+    justify-content: space-around; /* Distributes items evenly with space around them */
+    /* Other options for justify-content: flex-start, flex-end, center, space-between, space-evenly */
+    align-items: center; /* Aligns items vertically in the center (if the nav list has height) */
+    background-color: #333; /* Just for visual demonstration */
+}
+
+.nav-list li {
+    /* No specific styling needed for 'li' just to make them horizontal with flexbox */
+}
+
+.nav-list a {
+    display: block; /* Makes the entire link area clickable */
+    padding: 10px 15px; /* Adds space inside the links */
+    text-decoration: none; /* Removes underlines */
+    color: white;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.nav-list a:hover {
+    background-color: #555;
+}
