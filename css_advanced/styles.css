@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
    width: 200px;
     min-height: 200px; /* Ensures a minimum height even if content is small */
-    max-width: 600px;  /* Limits maximum width */
+   /* max-width: 600px;  Limits maximum width */
     background-color: lightcoral;
     margin: 20px;
     padding: 15px;
