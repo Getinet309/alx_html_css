@@ -138,7 +138,7 @@ header {
 /* --- Hero Section (`my_section`) --- */
 /* The hero section has a background image and text on top */
 .my_section {
-    background-image: url('./images/Object.jpg'); /* Ensure this path is correct */
+    background-image: url('images/Object.jpg'); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
