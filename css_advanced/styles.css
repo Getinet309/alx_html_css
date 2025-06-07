@@ -1,6 +1,5 @@
 .my_section {
   background-image: url('images/Object.png');
-  min-height: 1000px; /* Or a specific height */
     /* You might also want to add: */
    /* background-size: cover;*/
     background-size: contain;
