@@ -13,15 +13,15 @@
     padding: 15px;
 }
 .nav-list {
-    list-style: none; /* Removes bullet points */
+    list-style-type: none; /* Removes bullet points */
     padding: 0;      /* Removes default padding */
     margin: 0;       /* Removes default margin */
-    display: flex;   /* This is the key property */
+    display: block;   /* This is the key property */
     justify-content: space-around; /* Distributes items evenly with space around them */
     /* Other options for justify-content: flex-start, flex-end, center, space-between, space-evenly */
    align-items: center; /* Aligns items vertically in the center (if the nav list has height) */
     background-color: #333; /* Just for visual demonstration */
 }
-.nav-list a:hover {
-    background-color: #555;
+.nav-list a: hover {
+    background-color: #5555;
 }
