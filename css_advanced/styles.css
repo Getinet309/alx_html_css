@@ -1,27 +1,535 @@
-.my_section {
-  background-image: url('images/Object.png');
-    /* You might also want to add: */
-   /* background-size: cover;*/
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-   width: 200px;
-    min-height: 200px; /* Ensures a minimum height even if content is small */
-   /* max-width: 600px;  Limits maximum width */
-    background-color: lightcoral;
-    margin: 20px;
-    padding: 15px;
+/* Universal Box-Sizing for easier layout calculations */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
+
+/* Base Body Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* A modern, clean font */
+    line-height: 1.6;
+    margin: 0;
+    color: #333; /* Default text color */
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: #000; /* Black header background */
+    padding: 15px 0;
+    color: white;
+}
+
 .nav-list {
-    list-style-type: none; /* Removes bullet points */
-    padding: 0;      /* Removes default padding */
-    margin: 0;       /* Removes default margin */
-    display: block;   /* This is the key property */
-    justify-content: space-around; /* Distributes items evenly with space around them */
-    /* Other options for justify-content: flex-start, flex-end, center, space-between, space-evenly */
-   align-items: center; /* Aligns items vertically in the center (if the nav list has height) */
-    background-color: #333; /* Just for visual demonstration */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Puts logo on left, links on right */
+    align-items: center; /* Vertically centers items */
+    max-width: 1000px; /* Limit header width */
+    margin: 0 auto; /* Center the header content */
+    padding: 0 20px; /* Horizontal padding */
 }
-.nav-list a: hover {
-    background-color: #5555;
+
+.nav-list img {
+    height: 40px; /* Adjust logo size */
+    width: auto;
+}
+
+.nav-list ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox for horizontal list items */
+    gap: 30px; /* Space between nav links */
+}
+
+.nav-list ul li a {
+    text-decoration: none; /* Remove underline */
+    color: white;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+.nav-list ul li a:hover {
+    color: #007bff; /* Example hover color */
+}
+
+/* --- My Section (Hero Banner) --- */
+.my_section {
+    background-image: url('./images/Object.jpg'); /* Your specified background image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Don't repeat the image */
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Adjust padding for height */
+    min-height: 500px; /* Ensure sufficient height for the hero */
+    display: flex; /* Use flex for content alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.my_section h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Enhance readability */
+}
+
+.my_section span {
+    font-size: 1.2em;
+    margin: 0 10px 30px; /* Space out the words */
+    display: inline-block; /* Allows margin between spans */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.my_section button {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px; /* Rounded button */
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.my_section button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- Learn from the pros section --- */
+/* The 'Learn from the pros' heading and cards are inside the second div of the first main section. */
+main > section:nth-of-type(1) > div:nth-of-type(2) {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f8f8; /* Light background */
+}
+
+main > section:nth-of-type(1) > div:nth-of-type(2) h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+main > section:nth-of-type(1) > div:nth-of-type(2) > div { /* The container for trainer cards */
+    display: grid; /* Use grid for the trainer cards */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main > section:nth-of-type(1) > div:nth-of-type(2) > div > div { /* Individual trainer card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+main > section:nth-of-type(1) > div:nth-of-type(2) img {
+    width: 120px; /* Trainer image size */
+    height: 120px;
+    border-radius: 50%; /* Make images circular */
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+main > section:nth-of-type(1) > div:nth-of-type(2) h3 {
+    font-size: 1.4em;
+    margin: 0 0 5px;
+    color: #000;
+}
+
+main > section:nth-of-type(1) > div:nth-of-type(2) p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+/* --- Quote Section --- */
+main > section:nth-of-type(2) {
+    background-color: #007bff; /* Blue background for quote section */
+    color: white;
+    padding: 80px 20px;
+    display: flex; /* Use flexbox for image and quote content */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Vertically align */
+    gap: 50px; /* Space between image and text */
+}
+
+main > section:nth-of-type(2) > div:nth-of-type(1) img { /* Quote image */
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent image from shrinking too much */
+}
+
+main > section:nth-of-type(2) > div:nth-of-type(2) { /* Quote content div */
+    max-width: 600px;
+    text-align: left; /* Align text within its container */
+    flex-grow: 1; /* Allow content to grow and fill space */
+}
+
+main > section:nth-of-type(2) blockquote {
+    font-size: 1.4em;
+    font-style: italic;
+    margin: 0 0 15px;
+    line-height: 1.5;
+}
+
+main > section:nth-of-type(2) h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #fff;
+}
+
+main > section:nth-of-type(2) p {
+    font-size: 0.9em;
+    margin: 5px 0 0;
+    color: rgba(255,255,255,0.8);
+}
+
+/* --- Most Popular Tutorials Section --- */
+main > section:nth-of-type(3) {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+main > section:nth-of-type(3) h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+main > section:nth-of-type(3) > div { /* The container for tutorial cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main > section:nth-of-type(3) > div > div { /* Individual tutorial card */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within card */
+    text-align: left; /* Default text alignment */
+    position: relative; /* For video play icon, if added later */
+}
+
+main > section:nth-of-type(3) > div > div > img:first-of-type { /* Main tutorial image */
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+main > section:nth-of-type(3) > div > div h3 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+    color: #000;
+}
+
+main > section:nth-of-type(3) > div > div p:first-of-type { /* Description paragraph */
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+main > section:nth-of-type(3) > div > div > div:nth-of-type(1) { /* Author container */
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Pushes author to bottom */
+    width: 100%; /* Take full width for alignment */
+}
+
+main > section:nth-of-type(3) > div > div > div:nth-of-type(1) img { /* Author image */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+main > section:nth-of-type(3) > div > div > div:nth-of-type(1) h4 { /* Author name */
+    font-size: 0.9em;
+    margin: 0;
+    color: #007bff; /* Example: blue for author name */
+}
+
+main > section:nth-of-type(3) > div > div > div:nth-of-type(2) { /* Star rating container */
+    display: flex;
+    justify-content: flex-start; /* Align stars to the left */
+    width: 100%;
+    margin-top: 10px;
+    gap: 2px;
+}
+
+main > section:nth-of-type(3) > div > div > div:nth-of-type(2) .fa-star {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 0.9em;
+}
+
+main > section:nth-of-type(3) > div > div p:last-of-type { /* Duration paragraph */
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+
+/* --- Free Membership Section --- */
+main > section:nth-of-type(4) {
+    background-color: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+main > section:nth-of-type(4) h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+main > section:nth-of-type(4) > div:not(.fa-brands) { /* Container for membership benefits */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 50px; /* Add bottom margin for button */
+}
+
+main > section:nth-of-type(4) > div > div { /* Individual benefit card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+main > section:nth-of-type(4) img { /* Benefit icon */
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+main > section:nth-of-type(4) h3 {
+    font-size: 1.3em;
+    margin: 0 0 10px;
+    color: #000;
+}
+
+main > section:nth-of-type(4) p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+main > section:nth-of-type(4) button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+main > section:nth-of-type(4) button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- F.A.Q Section --- */
+main > section:nth-of-type(5) {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+main > section:nth-of-type(5) h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+main > section:nth-of-type(5) > div { /* Main container for FAQ columns */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for FAQs */
+    gap: 40px; /* Space between columns */
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left; /* Align text within columns to left */
+}
+
+main > section:nth-of-type(5) > div > div { /* Each column of FAQ items */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between individual FAQ items */
+}
+
+main > section:nth-of-type(5) h3 { /* FAQ question */
+    font-size: 1.2em;
+    margin: 0;
+    color: #000;
+}
+
+main > section:nth-of-type(5) p { /* FAQ answer */
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000; /* Black footer background */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer section { /* The inner section of the footer */
+    display: flex;
+    flex-direction: column; /* Default stack, adjust for desktop below */
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+footer img {
+    height: 40px; /* Logo size */
+    width: auto;
+}
+
+footer > section > div:nth-of-type(1) { /* Container for logo and social icons */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Take full width of parent section */
+    max-width: 300px; /* Limit width of this specific container */
+    margin-bottom: 20px;
+}
+
+footer > section > div:nth-of-type(1) div { /* Social icons container */
+    display: flex;
+    gap: 15px;
+}
+
+footer .fa-brands {
+    font-size: 1.8em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .fa-brands:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+
+footer p {
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Stack logo and nav links */
+        gap: 20px;
+    }
+    .nav-list ul {
+        gap: 15px; /* Reduce gap for stacked links */
+    }
+
+    .my_section {
+        padding: 80px 15px;
+        min-height: 400px;
+    }
+    .my_section h1 {
+        font-size: 2.5em;
+    }
+    .my_section span {
+        font-size: 1em;
+        margin: 5px 0; /* Stack spans vertically for better readability */
+        display: block;
+    }
+    .my_section button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    main > section:nth-of-type(1) > div:nth-of-type(2),
+    main > section:nth-of-type(3),
+    main > section:nth-of-type(4),
+    main > section:nth-of-type(5) {
+        padding: 40px 15px; /* Adjust section padding */
+    }
+
+    main > section:nth-of-type(1) > div:nth-of-type(2) h2,
+    main > section:nth-of-type(3) h2,
+    main > section:nth-of-type(4) h2,
+    main > section:nth-of-type(5) h2 {
+        font-size: 2em; /* Adjust main titles */
+        margin-bottom: 30px;
+    }
+
+    main > section:nth-of-type(2) {
+        flex-direction: column; /* Stack quote image and text */
+        gap: 30px;
+        padding: 60px 15px;
+    }
+    main > section:nth-of-type(2) > div:nth-of-type(2) {
+        text-align: center; /* Center quote text when stacked */
+    }
+
+    main > section:nth-of-type(5) > div { /* FAQ columns stack */
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    footer section {
+        flex-direction: column; /* Stack footer content */
+        gap: 20px;
+    }
+    footer > section > div:nth-of-type(1) {
+        flex-direction: column; /* Stack logo and social icons */
+        gap: 15px;
+        margin-bottom: 0;
+        width: auto; /* Remove fixed width */
+    }
+}
+
+@media (max-width: 480px) {
+    .my_section h1 {
+        font-size: 2em;
+    }
+    /* Spans are already block from the 768px media query */
+
+    main > section:nth-of-type(1) > div:nth-of-type(2) > div, /* Trainer grid */
+    main > section:nth-of-type(3) > div, /* Tutorial grid */
+    main > section:nth-of-type(4) > div:not(.fa-brands) { /* Membership grid */
+        grid-template-columns: 1fr; /* Force single column for all grids */
+    }
 }
