@@ -424,7 +424,7 @@ footer img {
 }
 
 footer > section > div:first-child { /* Container for logo and social icons */
-    display: flex;
+    display: inline-block;
     flex-direction: column; /* Stacked on small screens */
     justify-content: center;
     align-items: center;
