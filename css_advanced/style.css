@@ -50,7 +50,7 @@ header {
 
 /* My Section (Hero Section) */
 .my_section {
-    background-image: url('https://placehold.co/1920x800/6A0DAD/ffffff?text=Hero+Background'); /* Placeholder image */
+    background-image: url('images/Object.png'); /* Placeholder image */
     background-size: cover;
     background-position: center;
     color: white;
