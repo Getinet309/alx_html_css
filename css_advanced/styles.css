@@ -6,7 +6,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-   width: 400px;
+   width: 200px;
     min-height: 100px; /* Ensures a minimum height even if content is small */
     max-width: 600px;  /* Limits maximum width */
     background-color: lightcoral;
