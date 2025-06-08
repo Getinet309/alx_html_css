@@ -1,656 +1,247 @@
-/*
- * Smile School CSS Stylesheet
- *
- * This stylesheet provides comprehensive styling for the Smile School website,
- * based on the provided HTML structure and a visual reference image.
- * It aims for a clean, modern, and responsive design with a focus on:
- * - Clear typography and color scheme (purple, black, white).
- * - Responsive layouts using Flexbox and CSS Grid.
- * - Consistent spacing and element alignment.
- */
-
-/* 1. Global Reset and Base Styles */
+/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif; /* Using 'Inter' as a modern, clean sans-serif font */
-    line-height: 1.6;
-    color: #FFFFFF; /* Default text color for dark sections */
-    background-color: black; /* Default background for consistency */
-}
-
-/* Base styles for headings and paragraphs */
-h1, h2, h3, h4 {
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-p {
-    margin-bottom: 1em;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  background-color: #071629;
 }
 
 a {
-    text-decoration: none;
-    color: inherit; /* Inherit color from parent by default */
+  text-decoration: none;
+  color: white;
 }
 
-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+ul {
+  list-style: none;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Removes extra space below images */
-}
-
-/* 2. Header Section */
 header {
-    background-image: url('./images/background.jpg'); /* Background image for the hero section */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 800px; /* Ensures a tall hero section */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Pushes nav to top, hero content to middle/bottom */
-    padding: 20px 5%; /* Responsive padding */
+  background-color: #071629;
+  padding: 20px;
 }
 
-/* Navigation Bar */
 .nav-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Max width for content */
-    margin: 0 auto; /* Center the nav */
-    padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-list img {
-    height: 40px; /* Logo size */
-    object-fit: contain;
+  height: 40px;
 }
 
 .nav-list ul {
-    list-style: none;
-    display: flex;
-    gap: 30px; /* Space between nav items */
+  display: flex;
+  gap: 25px;
+  font-weight: bold;
 }
 
-.nav-list ul li a {
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    padding: 5px 0;
-    position: relative; /* For underline effect */
-}
-
-.nav-list ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #C271FF; /* Purple underline */
-    transition: width 0.3s ease-in-out;
-}
-
-.nav-list ul li a:hover::after,
-.nav-list ul li a:focus::after {
-    width: 100%;
-}
-
-/* 3. Main Content Sections */
-
-/* Section 1: Hero Content & Learn from Pros */
+/* Section 1: Hero */
 .my_section1 {
-    text-align: center;
-    padding: 50px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1; /* Allows it to take up available space in the header */
-    max-width: 1200px; /* Limit content width */
-    margin: 0 auto;
-}
-
-/* Hero text block */
-.my_section1 > div:first-child {
-    margin-bottom: 80px; /* Space before "Learn from pros" */
-    color: white;
+  text-align: center;
+  padding: 50px 20px;
+  background-image: url('./images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
 }
 
 .my_section1 h1 {
-    font-size: 5rem; /* Large heading */
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Subtle shadow for readability */
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .my_section1 span {
-    font-size: 2.2rem;
-    color: #C271FF; /* Purple color for keywords */
-    font-weight: bold;
-    margin: 0 15px;
-    text-transform: uppercase;
-    display: inline-block; /* Allows margin between them */
+  margin: 0 10px;
+  font-weight: bold;
+  color: #FF6565;
 }
 
 .my_section1 button {
-    background-color: #C271FF; /* Purple button */
-    color: white;
-    padding: 15px 40px;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 40px;
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Subtle shadow */
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background-color: #FF6565;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.my_section1 button:hover {
-    background-color: #a050d0; /* Darker purple on hover */
-}
-
-/* Learn from the pros section */
-.my_section1 > div:last-child {
-    width: 100%;
-}
-
+/* Learn from pros */
 .my_section1 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: white;
+  margin: 40px 0 20px;
 }
 
-.my_section1 > div:last-child > div { /* Container for the four pro cards */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-    gap: 40px;
+.my_section1 > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.my_section1 > div:last-child > div > div { /* Individual pro card */
-    text-align: center;
-    width: 200px; /* Fixed width for cards */
+.my_section1 img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
-.my_section1 > div:last-child img {
-    border-radius: 50%; /* Circular images */
-    width: 150px;
-    height: 150px;
-    object-fit: cover; /* Ensures images fill the circle without distortion */
-    border: 3px solid #C271FF; /* Purple border for emphasis */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Soft shadow */
-    transition: transform 0.3s ease;
+.my_section1 h3, .my_section1 p {
+  margin-top: 10px;
 }
 
-.my_section1 > div:last-child img:hover {
-    transform: scale(1.05); /* Slight scale on hover */
-}
-
-.my_section1 > div:last-child h3 {
-    color: white;
-    margin: 15px 0 5px 0;
-    font-size: 1.3em;
-}
-
-.my_section1 > div:last-child p {
-    color: #CCCCCC;
-    font-size: 0.95em;
-    font-style: italic;
-    margin: 0;
-}
-
-/* Section 2: Quote Section */
+/* Testimonials section */
 main > section:nth-of-type(2) {
-    background-color: #C271FF; /* Purple background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 5%; /* Padding for section */
-    gap: 60px; /* Space between image and text */
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-}
-
-main > section:nth-of-type(2) > div:first-child { /* Image container */
-    flex-shrink: 0; /* Prevent image from shrinking */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 30px;
 }
 
 main > section:nth-of-type(2) img {
-    border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border: 4px solid white; /* White border for contrast */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 250px;
+  border-radius: 10px;
 }
 
-main > section:nth-of-type(2) > div:last-child { /* Quote text container */
-    max-width: 600px; /* Limit quote width */
-    text-align: left;
+blockquote {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 10px;
 }
 
-main > section:nth-of-type(2) blockquote {
-    font-style: italic;
-    font-size: 1.5em;
-    margin: 0 0 20px 0;
-    color: white;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-main > section:nth-of-type(2) h3 {
-    font-size: 1.4em;
-    margin: 0;
-    color: white;
-}
-
-main > section:nth-of-type(2) p {
-    font-size: 1em;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 5px 0 0 0;
-}
-
-/* Section 3: Most Popular Tutorials (my_section2) */
+/* Tutorials section */
 .my_section2 {
-    background-color: black;
-    padding: 80px 5%;
-    text-align: center;
+  padding: 50px 20px;
+  background-color: #ffffff10;
 }
 
 .my_section2 h2 {
-    color: white;
-    font-size: 2.8rem;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
 }
 
-.my_section2 > div { /* Container for all tutorial cards */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+.my_section2 > div {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.my_section2 > div > div { /* Individual tutorial card */
-    background-color: #1A1A1A; /* Darker background for cards */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    overflow: hidden; /* Ensures image corners match card */
+.my_section2 > div > div {
+  background-color: #ffffff15;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 250px;
 }
 
-.my_section2 > div > div img:first-of-type { /* Tutorial thumbnail image */
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 15px;
+.my_section2 h3, .my_section2 p, .my_section2 h4 {
+  color: white;
 }
 
-.my_section2 > div > div h3 {
-    color: white;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.4em;
+.fa-star {
+  color: #FF6565;
 }
 
-.my_section2 > div > div p:first-of-type { /* Tutorial description */
-    color: #BBBBBB;
-    font-size: 0.95em;
-    margin-bottom: 15px;
-}
-
-.my_section2 > div > div > div:nth-of-type(1) { /* Author div */
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.my_section2 > div > div > div:nth-of-type(1) img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    margin-right: 10px;
-    border: 2px solid #C271FF;
-}
-
-.my_section2 > div > div > div:nth-of-type(1) h4 {
-    color: #C271FF; /* Purple for author name */
-    margin: 0;
-    font-size: 1em;
-}
-
-.my_section2 > div > div > div:nth-of-type(2) { /* Star rating and duration */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.my_section2 > div > div > div:nth-of-type(2) > div { /* Container for stars */
-    display: flex;
-    gap: 3px;
-}
-
-.my_section2 > div > div > div:nth-of-type(2) i {
-    color: #C271FF; /* Purple for active stars */
-    font-size: 1em;
-}
-
-.my_section2 > div > div > p:last-of-type { /* Time duration */
-    color: #C271FF;
-    font-weight: bold;
-    margin: 0;
-}
-
-/* Section 4: Free Membership (my_section3) */
+/* Membership section */
 .my_section3 {
-    background-color: white;
-    color: black;
-    padding: 80px 5%;
-    text-align: center;
+  background-color: #ffffff10;
+  padding: 50px 20px;
+  text-align: center;
 }
 
 .my_section3 h2 {
-    font-size: 2.8rem;
-    margin-bottom: 60px;
+  color: white;
+  margin-bottom: 30px;
 }
 
-.my_section3 > div:not(:last-of-type) { /* Container for all membership benefits */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto 50px auto; /* Centered with bottom margin */
-}
-
-.my_section3 > div > div { /* Individual membership benefit card */
-    text-align: center;
-}
-
-.my_section3 > div > div img {
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    margin: 0 auto 20px auto;
-}
-
-.my_section3 > div > div h3 {
-    font-size: 1.4em;
-    margin: 0 0 10px 0;
-    color: #333;
-}
-
-.my_section3 > div > div p {
-    color: #666;
-    font-size: 0.95em;
-    margin: 0;
+.my_section3 > div {
+  display: inline-block;
+  margin: 20px;
+  max-width: 200px;
 }
 
 .my_section3 button {
-    background-color: #C271FF;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 25px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-top: 30px;
+  padding: 12px 25px;
+  border: none;
+  background-color: #FF6565;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.my_section3 button:hover {
-    background-color: #a050d0;
+/* FAQ section */
+main > section:nth-of-type(5) {
+  background-color: #071629;
+  padding: 50px 20px;
 }
 
-/* Section 5: F.A.Q (last section in main) */
-main > section:last-of-type {
-    background-color: black;
-    padding: 80px 5%;
-    text-align: center;
+main > section:nth-of-type(5) h2 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-main > section:last-of-type h2 {
-    color: white;
-    font-size: 2.8rem;
-    margin-bottom: 60px;
+main > section:nth-of-type(5) > div {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-main > section:last-of-type > div { /* Container for the two columns of FAQs */
-    display: flex;
-    flex-wrap: wrap; /* Allow columns to wrap */
-    justify-content: center;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+main > section:nth-of-type(5) h3 {
+  margin: 15px 0 10px;
 }
 
-main > section:last-of-type > div > div { /* Each FAQ column */
-    flex: 1; /* Allows columns to grow and shrink */
-    min-width: 400px; /* Minimum width before wrapping */
-    max-width: 550px;
-    text-align: left;
+main > section:nth-of-type(5) div > div {
+  max-width: 400px;
+  color: white;
 }
 
-main > section:last-of-type > div > div > div { /* Individual FAQ item (question + answer) */
-    margin-bottom: 40px;
-}
-
-main > section:last-of-type h3 {
-    color: white;
-    font-size: 1.4em;
-    margin-bottom: 15px;
-}
-
-main > section:last-of-type p {
-    color: #BBBBBB;
-    font-size: 0.95em;
-    line-height: 1.8;
-}
-
-/* 6. Footer Section */
+/* Footer */
 footer {
-    background-color: #1A1A1A; /* Dark background for footer */
-    padding: 30px 5%;
-    color: white;
-    text-align: center;
-}
-
-footer section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping of elements */
-    max-width: 1200px;
-    margin: 0 auto;
+  background-color: #020f1e;
+  padding: 30px 20px;
+  text-align: center;
 }
 
 footer img {
-    height: 40px;
-    object-fit: contain;
-}
-
-footer > section > div:first-child { /* Logo and social icons container */
-    display: flex;
-    align-items: center;
+  height: 40px;
 }
 
 footer i {
-    font-size: 24px;
-    margin: 0 10px;
-    color: white;
-    transition: color 0.3s ease;
-}
-
-footer i:hover {
-    color: #C271FF; /* Purple on hover for social icons */
+  margin: 0 10px;
+  color: white;
 }
 
 footer p {
-    margin: 0;
-    font-size: 0.9em;
-    color: #BBBBBB;
+  margin-top: 20px;
+  color: #ccc;
+  font-size: 0.9rem;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-list ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-/* 7. Responsive Adjustments */
-@media (max-width: 992px) { /* For tablets and smaller desktops */
-    .my_section1 h1 {
-        font-size: 4rem;
-    }
+  .my_section1 > div:nth-child(2) {
+    flex-direction: column;
+  }
 
-    .my_section1 span {
-        font-size: 1.8rem;
-        margin: 0 10px;
-    }
-
-    .my_section1 button {
-        font-size: 1.1rem;
-        padding: 12px 30px;
-    }
-
-    .my_section2 > div,
-    .my_section3 > div:not(:last-of-type) {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-}
-
-@media (max-width: 768px) { /* For larger mobile devices and tablets */
-    header {
-        padding: 20px 3%;
-        min-height: 700px;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: flex-start; /* Align logo to left */
-    }
-
-    .nav-list ul {
-        margin-top: 25px;
-        width: 100%;
-        justify-content: space-around; /* Distribute nav items */
-        gap: 0;
-    }
-
-    .nav-list ul li {
-        margin-left: 0;
-    }
-
-    .my_section1 h1 {
-        font-size: 3.5rem;
-    }
-
-    .my_section1 span {
-        font-size: 1.5rem;
-        display: block; /* Stack smiles, grin, laugh */
-        margin: 10px 0;
-    }
-
-    .my_section1 button {
-        font-size: 1rem;
-        padding: 10px 25px;
-    }
-
-    .my_section1 h2,
-    .my_section2 h2,
-    .my_section3 h2,
-    main > section:last-of-type h2 {
-        font-size: 2.2rem;
-    }
-
-    .my_section1 > div:last-child > div {
-        flex-direction: column; /* Stack pro cards */
-        align-items: center;
-        gap: 30px;
-    }
-
-    main > section:nth-of-type(2) {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    main > section:nth-of-type(2) > div:last-child {
-        text-align: center; /* Center quote text */
-    }
-
-    .my_section2 > div,
-    .my_section3 > div:not(:last-of-type) {
-        grid-template-columns: 1fr; /* Single column layout */
-    }
-
-    main > section:last-of-type > div {
-        flex-direction: column; /* Stack FAQ columns */
-        align-items: center;
-    }
-
-    main > section:last-of-type > div > div {
-        min-width: unset; /* Remove min-width to allow full flexibility */
-        width: 90%; /* Occupy most of the width */
-        max-width: 450px; /* Max width for readability */
-    }
-
-    footer section {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    footer > section > div:first-child {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 480px) { /* For smaller mobile devices */
-    header {
-        padding: 15px 2%;
-        min-height: 600px;
-    }
-
-    .nav-list ul {
-        font-size: 0.9em;
-    }
-
-    .my_section1 h1 {
-        font-size: 2.8rem;
-    }
-
-    .my_section1 span {
-        font-size: 1.2rem;
-    }
-
-    .my_section1 button {
-        font-size: 0.9rem;
-        padding: 8px 20px;
-    }
-
-    .my_section1 h2,
-    .my_section2 h2,
-    .my_section3 h2,
-    main > section:last-of-type h2 {
-        font-size: 1.8rem;
-    }
-
-    main > section:nth-of-type(2) blockquote {
-        font-size: 1.2em;
-    }
-
-    main > section:last-of-type h3 {
-        font-size: 1.2em;
-    }
+  .my_section2 > div {
+    flex-direction: column;
+    align-items: center;
+  }
 }
