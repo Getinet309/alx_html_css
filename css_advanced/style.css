@@ -1,247 +1,396 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Body Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  color: #fff;
-  background-color: #071629;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #333;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-ul {
-  list-style: none;
-}
-
+/* Header and Navigation */
 header {
-  background-color: #071629;
-  padding: 20px;
+    background-color: #fff;
+    padding: 20px 50px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .nav-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-list img {
-  height: 40px;
+    height: 40px;
 }
 
 .nav-list ul {
-  display: flex;
-  gap: 25px;
-  font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-/* Section 1: Hero */
+.nav-list ul li {
+    margin-left: 30px;
+}
+
+.nav-list ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list ul li a:hover {
+    color: #c271ff;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+}
+
+/* Section 1: Hero and Pros */
 .my_section1 {
-  text-align: center;
-  padding: 50px 20px;
-  background-image: url('./images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  color: white;
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #f7f7f7;
 }
 
 .my_section1 h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .my_section1 span {
-  margin: 0 10px;
-  font-weight: bold;
-  color: #FF6565;
+    font-size: 24px;
+    color: #c271ff;
+    margin: 0 10px;
 }
 
 .my_section1 button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
-  background-color: #FF6565;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
+    background-color: #c271ff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
 }
 
-/* Learn from pros */
+.my_section1 button:hover {
+    background-color: #a146d4;
+}
+
 .my_section1 h2 {
-  margin: 40px 0 20px;
+    font-size: 36px;
+    color: #333;
+    margin-top: 80px;
+    margin-bottom: 40px;
 }
 
-.my_section1 > div:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.my_section1 > div:last-child > div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
-.my_section1 img {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+.my_section1 > div:last-child > div > div {
+    flex-basis: 20%;
+    text-align: center;
 }
 
-.my_section1 h3, .my_section1 p {
-  margin-top: 10px;
+.my_section1 > div:last-child img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-/* Testimonials section */
-main > section:nth-of-type(2) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-  gap: 30px;
+.my_section1 h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #333;
 }
 
-main > section:nth-of-type(2) img {
-  max-width: 250px;
-  border-radius: 10px;
+.my_section1 p {
+    font-style: italic;
+    color: #666;
 }
 
-blockquote {
-  font-style: italic;
-  color: #ccc;
-  margin-bottom: 10px;
+/* Quote Section */
+section:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+    background-color: #c271ff;
+    color: white;
 }
 
-/* Tutorials section */
+section:nth-of-type(2) img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 50px;
+    object-fit: cover;
+}
+
+section:nth-of-type(2) div:last-child {
+    max-width: 600px;
+}
+
+section:nth-of-type(2) blockquote {
+    font-size: 22px;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+}
+
+section:nth-of-type(2) h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+section:nth-of-type(2) p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* Section 2: Popular Tutorials */
 .my_section2 {
-  padding: 50px 20px;
-  background-color: #ffffff10;
+    padding: 80px 50px;
+    text-align: center;
 }
 
 .my_section2 h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #fff;
+    font-size: 36px;
+    margin-bottom: 50px;
 }
 
 .my_section2 > div {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .my_section2 > div > div {
-  background-color: #ffffff15;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 250px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    text-align: left;
 }
 
-.my_section2 h3, .my_section2 p, .my_section2 h4 {
-  color: white;
+.my_section2 img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.fa-star {
-  color: #FF6565;
+.my_section2 h3 {
+    font-size: 18px;
+    margin: 15px 0;
 }
 
-/* Membership section */
+.my_section2 p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.my_section2 > div > div > div:nth-of-type(1) {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.my_section2 > div > div > div:nth-of-type(1) img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.my_section2 h4 {
+    font-size: 14px;
+    color: #c271ff;
+    margin: 0;
+}
+
+.my_section2 > div > div > div:nth-of-type(2) {
+    display: flex;
+    margin: 15px 0;
+}
+
+.my_section2 .fa-star {
+    color: #ffd700;
+}
+
+.my_section2 > div > div > p:last-child {
+    text-align: right;
+    color: #c271ff;
+    font-weight: bold;
+}
+
+/* Section 3: Free Membership */
 .my_section3 {
-  background-color: #ffffff10;
-  padding: 50px 20px;
-  text-align: center;
+    padding: 80px 50px;
+    background-color: #f7f7f7;
+    text-align: center;
 }
 
 .my_section3 h2 {
-  color: white;
-  margin-bottom: 30px;
+    font-size: 36px;
+    margin-bottom: 50px;
 }
 
 .my_section3 > div {
-  display: inline-block;
-  margin: 20px;
-  max-width: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.my_section3 > div > div {
+    flex-basis: 20%;
+}
+
+.my_section3 img {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.my_section3 h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.my_section3 p {
+    color: #666;
+    line-height: 1.6;
 }
 
 .my_section3 button {
-  margin-top: 30px;
-  padding: 12px 25px;
-  border: none;
-  background-color: #FF6565;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
+    background-color: #c271ff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* FAQ section */
-main > section:nth-of-type(5) {
-  background-color: #071629;
-  padding: 50px 20px;
+.my_section3 button:hover {
+    background-color: #a146d4;
 }
 
-main > section:nth-of-type(5) h2 {
-  text-align: center;
-  margin-bottom: 40px;
+/* F.A.Q Section */
+section:nth-of-type(4) {
+    padding: 80px 50px;
+    text-align: center;
 }
 
-main > section:nth-of-type(5) > div {
-  display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
+section:nth-of-type(4) h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
 }
 
-main > section:nth-of-type(5) h3 {
-  margin: 15px 0 10px;
+section:nth-of-type(4) > div {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
 }
 
-main > section:nth-of-type(5) div > div {
-  max-width: 400px;
-  color: white;
+section:nth-of-type(4) > div > div {
+    flex-basis: 45%;
+    text-align: left;
 }
+
+section:nth-of-type(4) h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+section:nth-of-type(4) > div > div > div:nth-child(even) {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
 
 /* Footer */
 footer {
-  background-color: #020f1e;
-  padding: 30px 20px;
-  text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 40px 50px;
+}
+
+footer section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer img {
-  height: 40px;
+    height: 40px;
 }
 
-footer i {
-  margin: 0 10px;
-  color: white;
+footer .fa-brands {
+    margin-left: 20px;
+    font-size: 24px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .fa-brands:hover {
+    color: #c271ff;
 }
 
 footer p {
-  margin-top: 20px;
-  color: #ccc;
-  font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.7;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .nav-list ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+    .nav-list {
+        flex-direction: column;
+    }
 
-  .my_section1 > div:nth-child(2) {
-    flex-direction: column;
-  }
+    .nav-list ul {
+        margin-top: 20px;
+    }
 
-  .my_section2 > div {
-    flex-direction: column;
-    align-items: center;
-  }
+    .my_section1 > div:last-child > div,
+    .my_section2 > div,
+    .my_section3 > div,
+    section:nth-of-type(4) > div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section:nth-of-type(2) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section:nth-of-type(2) img {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    footer section {
+        flex-direction: column;
+    }
+
+    footer div {
+        margin-bottom: 20px;
+    }
 }
