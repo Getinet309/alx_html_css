@@ -1,1 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Light background similar to the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
+.container {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 30px; /* Space between feature items */
+}
+
+.feature-item {
+    flex: 1; /* Allows items to grow and shrink */
+    min-width: 200px; /* Minimum width for each item */
+    max-width: 220px; /* Max width to ensure spacing */
+    padding: 20px;
+    /* background-color: #f9f9f9; */ /* Optional: subtle background for each item */
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); */ /* Optional: subtle shadow for each item */
+    text-align: center;
+}
+
+.icon {
+    font-size: 3.5em;
+    color: #ff6347; /* A shade of red/coral for the icons */
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .feature-item {
+        max-width: 300px; /* Adjust max-width for stacked items */
+        width: 100%; /* Take full width within the container */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .icon {
+        font-size: 3em;
+    }
+}
