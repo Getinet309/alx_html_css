@@ -1,11 +1,11 @@
- /* --- General Body and Base Styles --- */
+
+           /* --- General Body and Base Styles --- */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            /* Default background for the whole site.
-               Will be overridden by specific page classes if needed. */
+            /* Default background for the whole site. */
             background-color: #f8f8f8; /* Light gray for general background */
             color: #333; /* Default text color for general content */
         }
@@ -20,6 +20,10 @@
         }
 
         /* --- Hero Section (for index.html) --- */
+        /* NOTE: Your HTML provided combines hero and other sections. */
+        /* This .hero style assumes it wraps the ENTIRE first page content */
+        /* If this is meant for an 'index.html' and 'what-we-do' is a separate page, */
+        /* then the 'hero' class should only be on the index page's main container. */
         .hero {
             background-image: url('headphones_hero_1.jpg');
             background-color: #333; /* Fallback if image fails, darker */
@@ -35,6 +39,8 @@
             text-align: center; /* Center text within hero */
             overflow: hidden;
             color: white; /* Default text color for hero content */
+            /* Added padding-top to account for the absolute hero-header */
+            padding-top: 60px; /* Adjust as needed based on header height */
         }
 
         /* Hero Overlay for readability */
@@ -50,11 +56,8 @@
         }
 
         /* --- Hero Header (for navigation and icon on index.html) --- */
-        /* This header should ideally be positioned relative to the viewport if it's sticky */
-        /* or relative to the hero if it's meant to stay within the hero's bounds. */
-        /* Given its design (top-left logo, top-right nav), it's often fixed/absolute to viewport. */
         .hero-header {
-            position: absolute; /* Position relative to .hero (if .hero is relative) or body */
+            position: absolute; /* Position relative to .hero or body */
             top: 0;
             left: 0;
             width: 100%;
@@ -64,12 +67,11 @@
             padding: 15px 30px;
             box-sizing: border-box;
             z-index: 1; /* Above overlay */
-            /* background: transparent; */ /* Already transparent by default for absolute elements */
         }
 
         /* Icon (Headphones Logo) on Hero Header */
         .icon1 {
-            font-size: 1.2rem; /* Corrected to 'rem', slightly larger */
+            font-size: 1.2rem;
             color: blue; /* Or a color visible on hero background */
             padding: 5px 10px;
             font-family: 'Spin-Cycle-OT', sans-serif; /* Fallback font */
@@ -77,6 +79,7 @@
             align-items: center;
             gap: 8px; /* Space between image and text */
             font-weight: bold;
+            z-index: 2; /* Ensure logo is above overlay */
         }
 
         .icon1 img {
@@ -93,7 +96,7 @@
             gap: 25px; /* More space between links */
         }
 
-       .top-right-nav li a {
+        .top-right-nav li a {
             text-decoration: none;
             color: white; /* Visible on dark hero background */
             padding: 8px 15px;
@@ -106,7 +109,8 @@
             color: #FF6565; /* Highlight color */
             background-color: rgba(255, 255, 255, 0.15); /* Subtle background on hover */
         }
-          /* --- Hero Content (for index.html) --- */
+
+        /* --- Hero Content (for index.html) --- */
         .hero-content {
             color: white;
             font-family: Arial, sans-serif;
@@ -160,10 +164,14 @@
             color: #371c77;
             font-family: Arial, sans-serif;
             text-align: center;
+            position: relative; /* Needed if it's meant to overlap with hero effects */
+            z-index: 1; /* Ensure it's above hero overlay */
+            padding-bottom: 0; /* Adjust if it's followed immediately by another section */
         }
 
         .content p {
-            color: white;
+            color: white; /* This color is problematic if .content background is transparent. */
+            /* If this section is inside the hero, white is fine. If it's outside on light gray, this needs adjustment. */
             font-size: 1em;
             line-height: 1.6;
             margin-bottom: 1em;
@@ -172,6 +180,8 @@
         /* --- Styles for the Second Page (e.g., results.html or what-we-do.html) --- */
 
         /* Class to apply to the <body> or <main> tag of the second page */
+        /* IMPORTANT: For this single HTML file, applying .white-bg-page to body for the 'What we do' section */
+        /* will affect the entire page. Consider using a dedicated section or div for this content. */
         .white-bg-page {
             background-color: white; /* The desired white background for the second page */
             color: #333; /* Default text color for this white page */
@@ -179,6 +189,7 @@
         }
 
         /* Header for the second page (reusing icon1 and top-right-nav classes) */
+        /* This header is intended for a separate page. For a single page, ensure this styling doesn't conflict. */
         .header-for-white-page {
             display: flex;
             justify-content: space-between;
@@ -207,7 +218,6 @@
         }
 
         /* Main Content Wrapper for the 'What we do...' and features section */
-        /* This `.container` class effectively becomes the main content area for the second page. */
         .container {
             /* Apply the common content width class here */
             /* Replaces: width: 80%; max-width: 1100px; padding: 30px 20px; */
@@ -270,11 +280,6 @@
             line-height: 1.5;
         }
 
-        /* Pentagon stats (if you bring them back to a "results" page) */
-        /* .stats-container-white-page, .stat-item-white-page, .pentagon-white-page etc. */
-        /* ... (Add these styles if you have them in your results.html) ... */
-
-
         /* --- Responsive Adjustments --- */
         @media (max-width: 768px) {
             .hero-content h1 {
@@ -289,10 +294,6 @@
             .top-right-nav ul {
                 gap: 15px;
             }
-            /* .stats-container-white-page {
-                flex-direction: column;
-                align-items: center;
-            } */ /* Uncomment if using pentagon stats */
             .features {
                 flex-direction: column;
                 align-items: center;
