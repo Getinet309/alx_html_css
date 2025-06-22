@@ -26,7 +26,7 @@
         /* then the 'hero' class should only be on the index page's main container. */
         .hero {
             background-image: url('headphones_hero_1.jpg');
-            background-color: #333; /* Fallback if image fails, darker */
+            background-color: #f0f0f0; 
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
