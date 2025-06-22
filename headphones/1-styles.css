@@ -4,45 +4,37 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    /* Default background for the whole site *outside* of specific sections.
-       We are removing .white-bg-page from the body as per single-page structure. */
-    background-color: #f0f0f0; /* Light gray for general background, visible below Hero */
-    color: #333; /* Default text color for general content */
+    background-color: #f0f0f0; /* Light gray for general background */
+    color: #333; /* Default text color */
 }
 
-/* Define a consistent maximum width for main content areas */
+/* Consistent maximum width for main content areas */
 .main-content-width {
-    max-width: 1100px; /* Adjust this value as needed for your design */
-    margin-left: auto; /* Center the content horizontally */
-    margin-right: auto; /* Center the content horizontally */
-    padding: 0 20px; /* Add horizontal padding to prevent content from touching edges */
-    box-sizing: border-box; /* Include padding in the width calculation */
+    max-width: 1100px;
+    margin: 0 auto; /* Shorthand for centering horizontally */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
-/* --- Hero Section (for the top of your page) --- */
+/* --- Hero Section (full-height banner) --- */
 .hero {
     background-image: url('headphones_hero_1.jpg');
-    /* Removed background-color: #f0f0f0; here as the image typically covers it.
-       If the image fails, the body's background-color would act as a fallback,
-       or you can add a dark fallback color here if preferred for the hero. */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 100vh; /* Make hero take full viewport height */
+    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text within hero */
-    overflow: hidden;
+    text-align: center;
     color: white; /* Default text color for hero content */
-    /* Added padding-top to account for the absolute hero-header
-       This pushes the hero-content down so it doesn't overlap the header. */
-    padding-top: 60px; /* Adjust as needed based on header height */
+    padding-top: 60px; /* Space for the absolute header */
+    overflow: hidden; /* Ensures nothing overflows the hero boundaries */
 }
 
-/* Hero Overlay for readability */
+/* Semi-transparent dark overlay for readability on hero */
 .hero::before {
     content: '';
     position: absolute;
@@ -50,13 +42,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
-    z-index: 0; /* Keep it behind text content */
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
 }
 
-/* --- Hero Header (for navigation and icon) --- */
+/* --- Hero Header (Navigation and Logo) --- */
 .hero-header {
-    position: absolute; /* Position relative to .hero */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -65,26 +57,23 @@ body {
     align-items: center;
     padding: 15px 30px;
     box-sizing: border-box;
-    z-index: 1; /* Above overlay */
+    z-index: 10; /* Higher z-index to ensure it's always on top */
 }
 
-/* Icon (Headphones Logo) on Hero Header */
+/* Headphones Logo */
 .icon1 {
     font-size: 1.2rem;
-    color: white; /* Changed to white to be visible on dark hero background */
-    padding: 5px 10px;
-    /* Removed 'Spin-Cycle-OT' unless you're explicitly importing this custom font.
-       Using a common web-safe font or ensure it's imported. */
-    font-family: Arial, sans-serif; /* Fallback for general use */
+    color: white;
+    font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between image and text */
-    font-weight: bold;
-    z-index: 2; /* Ensure logo is above overlay */
+    gap: 8px;
+    /* Consider importing a custom font if desired, e.g., via @import or <link> */
+    font-family: 'Montserrat', sans-serif; /* Example: using a common web font */
 }
 
 .icon1 img {
-    height: 30px; /* Adjusted icon size */
+    height: 30px;
     width: auto;
 }
 
@@ -94,12 +83,12 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 25px; /* More space between links */
+    gap: 25px;
 }
 
 .top-right-nav li a {
     text-decoration: none;
-    color: white; /* Visible on dark hero background */
+    color: white;
     padding: 8px 15px;
     border-radius: 5px;
     transition: color 0.3s ease, background-color 0.3s ease;
@@ -107,24 +96,24 @@ body {
 
 .top-right-nav li a:hover,
 .top-right-nav li a:active {
-    color: #FF6565; /* Highlight color */
-    background-color: rgba(255, 255, 255, 0.15); /* Subtle background on hover */
+    color: #FF6565;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* --- Hero Content (main text and button within the hero) --- */
+/* --- Hero Content (main text and button within hero) --- */
 .hero-content {
-    color: white; /* Explicitly white for hero text */
-    font-family: Arial, sans-serif;
+    color: white;
+    font-family: Arial, sans-serif; /* Or 'Montserrat', sans-serif if using it */
     text-align: center;
-    padding: 120px 40px; /* Adjust padding for better look, especially considering header */
-    position: relative;
-    z-index: 1; /* Above overlay */
-    max-width: 900px; /* Set max-width for hero content specific text block */
-    margin: auto; /* Center content horizontally */
+    padding: 80px 40px; /* Adjusted padding, less top padding as header pushes it down */
+    position: relative; /* Needed to be above the overlay */
+    z-index: 1;
+    max-width: 900px;
+    margin: auto;
 }
 
 .hero-content h1 {
-    font-size: 3.5em; /* Larger heading for hero */
+    font-size: 3.5em;
     margin-bottom: 25px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -133,12 +122,12 @@ body {
     font-size: 1.2em;
     line-height: 1.7;
     margin-bottom: 50px;
-    color: #f0f0f0; /* Slightly off-white for body text */
+    color: #f0f0f0;
 }
 
-/* Button on Hero */
+/* Action Button */
 .button {
-    background-color: hsl(0, 89%, 55%); /* Red/Orange */
+    background-color: #FF6565; /* Consistent red/orange color */
     color: white;
     padding: 15px 30px;
     border: none;
@@ -149,51 +138,45 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
-    display: inline-block; /* Ensure it respects margin/padding */
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .button:hover {
-    background-color: #FF6565;
+    background-color: #e55a5a; /* Slightly darker on hover */
     transform: translateY(-2px);
 }
 
-/* --- "Intro" Content Section (from your latest HTML, previously named '.content') --- */
-/* This section is *inside* the hero in your HTML, so its background will be the hero's. */
-.hero .content { /* Target .content specifically within .hero */
-    background-color: transparent; /* Corrected: Use transparent to show hero background */
-    padding: 50px 0; /* Vertical padding, horizontal handled by .main-content-width */
-    color: white; /* Changed to white because it's inside the dark hero */
+/* --- "Intro" Content Section (from your HTML, inside the hero) --- */
+.hero .content {
+    background-color: transparent; /* Keep background transparent to show hero image */
+    padding: 50px 0; /* Vertical padding */
+    color: white; /* Text color inside hero */
     font-family: Arial, sans-serif;
     text-align: center;
     position: relative;
     z-index: 1; /* Ensure it's above hero overlay */
-    padding-bottom: 0; /* Adjust if it's followed immediately by another section */
 }
 
-.hero .content p { /* Target p tags within this specific content section */
-    color: white; /* Ensure text is white against the hero's dark background */
+.hero .content p {
+    color: white; /* Explicitly white for consistency */
     font-size: 1em;
     line-height: 1.6;
     margin-bottom: 1em;
+    max-width: 700px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* --- Styles for the "What we do..." and features section (appears *after* hero) --- */
-
-/* Removed .white-bg-page from here as it was on the body.
-   Instead, style the .container and related elements directly for their white background. */
-
-/* Main Content Wrapper for the 'What we do...' and features section */
+/* --- "What we do..." Section and Features (below the hero) --- */
 .container {
-    /* Apply the common content width class here */
-    padding-top: 50px; /* Specific top padding */
-    padding-bottom: 50px; /* Specific bottom padding */
+    background-color: #ffffff;
+    color: #333;
+    padding: 60px 0; /* More balanced padding top/bottom */
     text-align: center;
-    background-color: #ffffff; /* Explicitly white background for this section */
-    color: #333; /* Default text color for this white section */
-    border-radius: 8px; /* Added for visual appeal */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for main content */
-    margin-top: 30px; /* Space from content above */
-    margin-bottom: 30px; /* Space below */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin: 40px auto; /* Add vertical margin for spacing, and center */
 }
 
 .container h1 {
@@ -207,30 +190,36 @@ body {
     color: #555;
     line-height: 1.6;
     margin-bottom: 40px;
-    max-width: 800px; /* Specific max-width for the description paragraph */
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .features {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Changed to center for better alignment when less than 4 items */
     flex-wrap: wrap;
     gap: 30px;
+    padding: 0 20px; /* Added internal padding to keep items off edges on small screens */
 }
 
 .feature-item {
-    flex: 1;
-    min-width: 200px;
-    max-width: 220px;
+    flex: 1; /* Allow items to grow/shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    max-width: 250px; /* Maximum width for each item */
     padding: 20px;
     text-align: center;
 }
 
 .icon {
-    font-size: 3.5em;
-    color: #ff6347; /* A shade of red/coral for the icons */
+    font-size: 3.8em; /* Slightly larger icon */
+    color: #FF6565; /* Consistent brand color */
     margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Smooth transition for icon hover */
+}
+
+.feature-item:hover .icon {
+    transform: translateY(-5px); /* Lift icon on hover */
 }
 
 .feature-item h3 {
@@ -246,63 +235,88 @@ body {
 }
 
 /* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .main-content-width {
+        padding: 0 15px;
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .hero-header {
+        padding: 15px 20px;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero-content {
+        padding: 60px 30px; /* Adjusted padding for hero content */
+    }
     .hero-content h1 {
         font-size: 2.5em;
+        margin-bottom: 20px;
     }
     .hero-content p {
         font-size: 1em;
-    }
-    .hero-header {
-        padding: 10px 20px;
+        margin-bottom: 40px;
     }
     .top-right-nav ul {
         gap: 15px;
     }
     .features {
-        flex-direction: column;
+        flex-direction: column; /* Stack features on smaller tablets */
         align-items: center;
     }
     .feature-item {
-        max-width: 300px;
-        width: 100%;
-    }
-    .main-content-width {
-        padding: 0 15px; /* Adjust padding for smaller screens */
+        max-width: 80%; /* Allow feature items to take more width when stacked */
+        min-width: unset; /* Remove min-width when stacking */
     }
 }
 
 @media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2em;
+    .hero-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+    .icon1 {
+        margin-bottom: 10px; /* Space between logo and nav when stacked */
+    }
+    .top-right-nav {
+        width: 100%; /* Make navigation take full width */
+    }
+    .top-right-nav ul {
+        justify-content: space-around; /* Distribute links evenly */
+        width: 100%;
+        gap: 0; /* Remove gap when using space-around */
+    }
+    .top-right-nav li a {
+        padding: 5px 10px; /* Smaller padding for nav links */
+        font-size: 0.9em;
     }
     .hero-content {
-        padding: 80px 20px;
+        padding: 40px 20px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
     }
     .button {
         padding: 12px 25px;
         font-size: 0.9rem;
     }
-    .hero-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .top-right-nav {
-        width: 100%;
-    }
-    .top-right-nav ul {
-        justify-content: space-around;
-        width: 100%;
-    }
-    /* Assuming these h1 and description are for .container and not .hero-content on mobile */
     .container h1 {
         font-size: 2em;
     }
     .description {
         font-size: 1em;
+        margin-bottom: 30px;
     }
     .icon {
         font-size: 3em;
+    }
+    .feature-item {
+        max-width: 95%; /* Even wider for very small screens */
     }
 }
