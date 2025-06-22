@@ -93,7 +93,7 @@
             gap: 25px; /* More space between links */
         }
 
-        .top-right-nav li a {
+       .top-right-nav li a {
             text-decoration: none;
             color: white; /* Visible on dark hero background */
             padding: 8px 15px;
@@ -106,8 +106,7 @@
             color: #FF6565; /* Highlight color */
             background-color: rgba(255, 255, 255, 0.15); /* Subtle background on hover */
         }
-
-        /* --- Hero Content (for index.html) --- */
+          /* --- Hero Content (for index.html) --- */
         .hero-content {
             color: white;
             font-family: Arial, sans-serif;
